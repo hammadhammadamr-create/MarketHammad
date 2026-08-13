@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'><path fill='%232563eb' d='M21.5 181.1L78.3 67.4C89.2 45.7 111.3 32 135.6 32l304.9 0c24.2 0 46.4 13.7 57.2 35.4l56.8 113.7c3.6 7.2 5.5 15.1 5.5 23.2 0 27.3-21.2 49.7-48 51.6L512 448c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-192-96 0 0 176c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-176.1c-26.8-1.9-48-24.3-48-51.6 0-8 1.9-16 5.5-23.2zM128 256l0 112c0 8.8 7.2 16 16 16l128 0c8.8 0 16-7.2 16-16l0-112-160 0z'/></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <title>Market Hammad</title>
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent-color: #0284c7;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;   
+            --bg-light: #f8fafc;  
+            --white: #ffffff;
+            --shadow: 0 4px 20px -2px rgba(0,0,0,0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Google Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--white);
+            padding-top: 80px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* === HEADER === */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.745);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        #logo {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-login {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1.5px solid var(--primary-color);
+        }
+
+        .btn-login:hover {
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+        .btn-signup {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-signup:hover {
+            background: var(--primary-hover);
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 5%;
+            min-height: calc(100vh - 80px);
+            background: radial-gradient(circle at top right, #eff6ff 0%, #ffffff 60%);
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h2 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content h2 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-image {
+            max-width: 45%;
+            text-align: center;
+        }
+
+        .hero-image i {
+            font-size: 14rem;
+            color: var(--primary-color);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* === FEATURES SECTION === */
+        .features {
+            padding: 100px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 50px 0 rgba(37, 99, 235, 0.3);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* === WHY US SECTION === */
+        .why-us {
+            padding: 100px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .why-us-list {
+            list-style: none;
+            max-width: 600px;
+        }
+
+        .why-us-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .why-us-list i {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-top: 3px;
+        }
+
+        /* === FAQ SECTION === */
+        .faq {
+            padding: 100px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+            background-color: #eff6ff;   
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            color: var(--text-muted);
+            line-height: 1.6;
+            transition: all 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 15px 20px 20px 20px;
+            max-height: 200px;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background-color: #0f172a;
+            color: var(--white);
+            padding: 50px 5% 20px 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 890px) {
+            header nav { display: none; }
+            .hero { flex-direction: column; text-align: center; padding-top: 40px; }
+            .hero-content { max-width: 100%; }
+            .hero-image { max-width: 100%; margin-top: 40px; }
+            .hero-image i { font-size: 9rem; }
+            .why-us { flex-direction: column; }
+        }
+
+        @media (max-width: 550px) {
+            header{justify-content: center;}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="logo"><i class="fa-solid fa-shop"></i>Market Hammad</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <button class="btn btn-login" id="login-btn"><a href="./login & signup/login&signup.html">Login</a></button>
+            <button class="btn btn-signup" id="signup-btn"><a href="./login & signup/login&signup.html">Register Now</a></button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 id="text">Everything You Need, <span>All In One Place</span></h2>
+            <p>Upgrade your shopping experience with Market Hammad. Explore premium products, enjoy swift shipping, and get exclusive daily deals.</p>
+            <button class="btn btn-signup" style="padding: 15px 32px; font-size: 1.1rem;">
+                <a href="./login & signup/login&signup.html" id="start">Start Shopping Now</a>
+            </button>
+        </div>
+        <div class="hero-image">
+            <i class="fa-solid fa-store"></i>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2 class="section-title">Built For Better Shopping</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Express Shipping</h3>
+                <p>Lightning-fast delivery directly to your door with real-time tracking.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Secure Checkout</h3>
+                <p>Multiple encrypted payment options ensuring your safety at all times.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-tags"></i>
+                <h3>Best Prices</h3>
+                <p>Direct supplier deals mean you always get top-quality items for less.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24/7 Dedicated Support</h3>
+                <p>Have questions? Our support team is ready to assist you any time, day or night.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us" id="why-us">
+        <div>
+            <h2 class="section-title" style="text-align: left;">Why Choose Market Hammad?</h2>
+            <ul class="why-us-list">
+                <li><i class="fa-solid fa-circle-check"></i> Thousands of verified quality products across multiple categories.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Transparent pricing with zero hidden fees or surprise charges.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Hassle-free 30-day money-back guarantee policy.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Personalized recommendations based on your preferences.</li>
+            </ul>
+        </div>
+        <div style="font-size: 12rem; color: var(--primary-color); opacity: 0.15;">
+            <i class="fa-solid fa-box-open"></i>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I create a new account?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Simply click on the "Register Now" button in the header, enter your basic info, and you'll be ready to shop in under a minute!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We support Credit/Debit Cards (Visa, MasterCard), digital wallets, and Cash on Delivery (COD) for your convenience.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How can I track my order?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Once registered and an order is placed, you will receive a tracking link in your profile dashboard and via email to monitor live shipping progress.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is the return and refund policy?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We offer a 30-day hassle-free return window for undamaged items. You can request a full refund or exchange through your account settings.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is there free delivery available?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer free express shipping on all orders that meet our minimum order threshold shown at checkout.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3><i class="fa-solid fa-shop"></i> Market Hammad</h3>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Market Hammad. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        let faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            let question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                item.classList.toggle('active');
+            });
+        });
+
+        let loginBtn = document.getElementById('login-btn');
+        let startBtn = document.getElementById('start');
+        let signupBtn = document.getElementById('signup-btn');
+
+        loginBtn.addEventListener('click', () => {
+            sessionStorage.setItem('authMode', 'login');
+            sessionStorage.setItem('startShopping', 'false');
+        });
+
+        signupBtn.addEventListener('click', () => {
+            sessionStorage.setItem('authMode', 'signup');
+            sessionStorage.setItem('startShopping', 'false');
+        });
+
+        startBtn.addEventListener('click', () => {
+            sessionStorage.setItem('authMode', 'login');
+            sessionStorage.setItem('startShopping', 'true');
+        });
+
+    </script>
+</body>
+</html>

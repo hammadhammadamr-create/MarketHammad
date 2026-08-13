@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'><path fill='%232563eb' d='M21.5 181.1L78.3 67.4C89.2 45.7 111.3 32 135.6 32l304.9 0c24.2 0 46.4 13.7 57.2 35.4l56.8 113.7c3.6 7.2 5.5 15.1 5.5 23.2 0 27.3-21.2 49.7-48 51.6L512 448c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-192-96 0 0 176c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-176.1c-26.8-1.9-48-24.3-48-51.6 0-8 1.9-16 5.5-23.2zM128 256l0 112c0 8.8 7.2 16 16 16l128 0c8.8 0 16-7.2 16-16l0-112-160 0z'/></svg>">
+    
+    <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Home - Market Hammad</title>
+</head>
+<body>
+
+    <header>
+        <h1 class="logo"><i class="fa-solid fa-shop"></i> Market Hammad</h1>
+
+        <nav>
+            <ul>
+                <li><a href="../Home/home.html" class="active">Home</a></li>
+                <li><a href="../Products/products.html">Products</a></li>
+                <li><a href="../About/about.html">About</a></li>
+                <li><a href="../Contact/contact.html">Contact</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="#" onclick="document.getElementById('cart_iframe').style.display = 'block'; return false;" class="cart-btn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-badge">0</span>
+                </a>
+            </div>
+        </nav>
+
+        
+    </header>
+
+    <main class="home-container">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-bolt"></i> New Season Arrivals</span>
+                <h1>Discover Quality Products For Your Everyday Life</h1>
+                <p>Explore thousands of premium items across technology, fashion, and home essentials with guaranteed quality and rapid doorstep delivery.</p>
+                <div class="hero-btns">
+                    <a href="../Products/products.html" class="btn primary-btn">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="../About/about.html" class="btn secondary-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-card-preview">
+                <div class="preview-box">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <h3>Top Rated Store</h3>
+                    <p>Over 50,000+ happy customers trust Market Hammad daily.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="section-header">
+                <h2>Why Shop With Us</h2>
+                <p>We provide the best shopping experience with premium services</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your orders delivered within 24-48 hours with real-time tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure checkout with encrypted transactions and multiple options.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle-free 30-day return policy on all products with instant refunds.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated team is available round the clock to assist you anytime.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="section-header">
+                <h2>Explore Popular Categories</h2>
+                <p>Find exactly what you need from our top curated collections</p>
+            </div>
+
+
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fa-solid fa-utensils"></i> 
+                    <h3>Groceries & Food</h3> 
+                    <span>120+ Products</span>
+                    <a href="../Products/products.html" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="category-card">
+                    <i class="fa-solid fa-shirt"></i>
+                    <h3>Fashion & Apparel</h3>
+                    <span>250+ Products</span>
+                    <a href="../Products/products.html" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="category-card">
+                    <i class="fa-solid fa-couch"></i>
+                    <h3>Home & Living</h3>
+                    <span>95+ Products</span>
+                    <a href="../Products/products.html" class="cat-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+       
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p>Real feedback from thousands of happy shoppers</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Amazing quality and super fast delivery. Market Hammad is now my go-to store for everything!"</p>
+                    <div class="customer">
+                        <div class="avatar">A</div>
+                        <div class="customer-info">
+                            <h4>Ahmed Hassan</h4>
+                            <span>Cairo, Egypt</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"The customer support team helped me choose the perfect laptop. Excellent service and great prices."</p>
+                    <div class="customer">
+                        <div class="avatar">S</div>
+                        <div class="customer-info">
+                            <h4>Sara Mohamed</h4>
+                            <span>Alexandria, Egypt</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p>"Love the easy returns policy. Bought a wrong size shirt and got refunded within 2 days. Highly recommend!"</p>
+                    <div class="customer">
+                        <div class="avatar">K</div>
+                        <div class="customer-info">
+                            <h4>Karim Youssef</h4>
+                            <span>Giza, Egypt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner Section -->
+        <section class="cta-banner">
+            <div class="cta-content">
+                <h2>Ready to Start Shopping?</h2>
+                <p>Join thousands of happy customers and discover our exclusive deals today.</p>
+                <a href="../Products/products.html" class="btn primary-btn">Browse All Products</a>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get the latest deals, new arrivals, and exclusive offers directly to your inbox.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3><i class="fa-solid fa-shop"></i> Market Hammad</h3>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Market Hammad. All rights reserved.
+        </div>
+    </footer>
+
+    <iframe src="../Shopping Cart/index.html" frameborder="0" id="cart_iframe" title="Shopping Cart" style="width: 30%; height: 100%; border: none; display: none; position: fixed; top: 0; right: 0; z-index: 1000;"></iframe>
+    
+    <script src="script.js"></script>
+</body>
+</html>
