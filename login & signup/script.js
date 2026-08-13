@@ -2,10 +2,10 @@ const loginToggleBtn = document.getElementById('login_toggle_btn');
 const signupToggleBtn = document.getElementById('signup_toggle_btn');
 const loginForm = document.getElementById('login_form');
 const signupForm = document.getElementById('signup_form');
-let check = sessionStorage.getItem('startShopping');
+let check = localStorage.getItem('startShopping');
 
 function authMode() {
-    let authMode = sessionStorage.getItem('authMode');
+    let authMode = localStorage.getItem('authMode');
 
     if (authMode === 'login') {
         loginToggleBtn.classList.add('active');
@@ -50,7 +50,7 @@ loginForm.addEventListener('submit', (e) => {
         return;
     }
 
-    const userData = JSON.parse(sessionStorage.getItem('signupData'));
+    const userData = JSON.parse(localStorage.getItem('signupData'));
 
     if (!userData) {
         alert('No account found. Please sign up first.');
@@ -93,7 +93,7 @@ signupForm.addEventListener('submit', (e) => {
         email: email,
         password: password
     };
-    sessionStorage.setItem('signupData', JSON.stringify(signupData));
+    localStorage.setItem('signupData', JSON.stringify(signupData));
 
     alert(`Account created successfully for ${name}!`);
 

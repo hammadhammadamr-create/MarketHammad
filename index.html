@@ -367,7 +367,9 @@
         }
 
         @media (max-width: 550px) {
-            header{justify-content: center;}
+            header{
+                /* flex-direction:row ;  */
+                justify-content: center}
         }
     </style>
 </head>
@@ -539,18 +541,20 @@
         let signupBtn = document.getElementById('signup-btn');
 
         loginBtn.addEventListener('click', () => {
-            sessionStorage.setItem('authMode', 'login');
-            sessionStorage.setItem('startShopping', 'false');
+            
+            
+            localStorage.setItem('authMode', 'login');
+            localStorage.setItem('startShopping', 'false');
         });
 
         signupBtn.addEventListener('click', () => {
-            sessionStorage.setItem('authMode', 'signup');
-            sessionStorage.setItem('startShopping', 'false');
+            localStorage.setItem('authMode', 'signup');
+            localStorage.setItem('startShopping', 'false');
         });
 
         startBtn.addEventListener('click', () => {
-            sessionStorage.setItem('authMode', 'login');
-            sessionStorage.setItem('startShopping', 'true');
+            localStorage.setItem('authMode', 'login');
+            localStorage.setItem('startShopping', 'true');
         });
 
     </script>
