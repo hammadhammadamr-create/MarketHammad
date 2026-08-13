@@ -183,19 +183,6 @@ nav ul li a:hover {
     gap: 18px;
 }
 
-.badge {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(4px);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 .hero-content h1 {
     font-size: clamp(2.2rem, 5vw, 3.6rem);
     font-weight: 700;
